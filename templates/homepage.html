@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Live Streaming</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='homepage.css') }}">
+</head>
+
+<body>
+    <h1>Live Streaming</h1>
+    <div class="content_live">
+        <div class="relative_position">
+            <div class="in_live">
+                <h1><span class="icon_in_live fadeOut"></span>Ao vivo</h1>
+            </div>
+            <img id="live_stream" src="{{ url_for('video_feed') }}" width="450" height="650">
+        </div>
+    </div>
+    <br>
+    <button id="start_live" onclick="startStream()">Iniciar Live</button>
+    <button onclick="stopStream()">Encerrar Live</button>
+    <script>
+        function startStream() {
+            fetch('/start_stream')
+                .then(response => response.text())
+                .then(data => console.log(data));
+        }
+
+        function stopStream() {
+            fetch('/stop_stream')
+                .then(response => response.text())
+                .then(data => console.log(data));
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+#live_stream {
+	border-radius: 0.5rem;
+	z-index: -1;
+}
+.content_live {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+}
+.relative_position {
+	position: relative;
+}
+.in_live {
+	position: absolute;
+	z-index: 20;
+	font-size: xx-small;
+	right: 10px;
+	top: 10px;
+	background-color: transparent;
+}
+.in_live h1 {
+	background: #6420a8;
+	background: linear-gradient(
+		to right,
+		#6420a8 5%,
+		#3643ff 50%,
+		#2587b8 100%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	border: 2px lightslategray;
+	padding: 4px;
+	border-radius: 5px;
+	font-size: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.in_live h1 span {
+	background-color: red;
+	border-radius: 50%;
+	width: 6px;
+	height: 6px;
+}
+
+.fadeOut {
+	-webkit-animation-name: fadeOut;
+	animation-name: fadeOut;
+	-webkit-animation-duration: 1s;
+	animation-duration: 2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+}
+@-webkit-keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
